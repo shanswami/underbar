@@ -166,17 +166,17 @@ var _ = {};
   //     return total + number;
   //   }, 0); // should be 6
   _.reduce = function(collection, iterator, accumulator) {
-      var resultingArray;
+      var previousValue;
       if(accumulator === undefined)
       {
-        resultingArray = 0;
+        previousValue = collection[0];
       } else {
-        resultingArray = accumulator;
+        previousValue = accumulator;
       }
       _.each(collection, function(value) {
-        resultingArray = iterator(resultingArray, value)
+        previousValue = iterator(previousValue, value)
       })
-      return resultingArray;
+      return previousValue;
 
   };
 
