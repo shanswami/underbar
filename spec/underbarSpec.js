@@ -271,6 +271,8 @@ describe('every', function() {
   it('treats each item as as a callback result when no callback is provided', function() {
     expect(_.every([true, true, true])).to.equal(true);
     expect(_.every([false, false, false])).to.equal(false);
+    expect(_.every([false, false, true])).to.equal(false);
+    expect(_.every([false, true, false])).to.equal(false);
   });
 
   it('works when provded a collection containing undefined values', function() {
